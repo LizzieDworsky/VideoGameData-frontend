@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
+import Mapper from "./Components/Mapper";
 
 function App() {
     const [videoGames, setVideoGames] = useState([]);
     const [filter, setFilter] = useState("");
+    const [filteredGames, setFilteredGames] = useState([]);
 
     useEffect(() => {
         getAllGames();
@@ -13,6 +15,7 @@ function App() {
 
     async function getAllGames() {
         let response = await axios.get("http://localhost:8080/all");
+        console.log(response.data);
         setVideoGames(response.data);
     }
 
@@ -23,7 +26,7 @@ function App() {
             }
         });
         console.log(tempFilter);
-        setVideoGames(tempFilter);
+        setFilteredGames(tempFilter);
     }
 
     return (
@@ -36,6 +39,7 @@ function App() {
                     <h3>Search for Games to Learn More</h3>
                     <SearchBar setState={setFilter} />
                     <button onClick={filterGames}>Search</button>
+                    {filteredGames[0] ? <Mapper array={filteredGames} /> : null}
                 </div>
             </main>
             <footer></footer>
