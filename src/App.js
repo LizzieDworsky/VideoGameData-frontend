@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import NavBar from "./Components/NavBar";
 
 function App() {
     const [videoGames, setVideoGames] = useState([]);
@@ -15,7 +16,9 @@ function App() {
 
     return (
         <div>
-            <h1>Hello World</h1>
+            <header>
+                <NavBar />
+            </header>
         </div>
     );
 }
