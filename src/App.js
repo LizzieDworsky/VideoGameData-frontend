@@ -11,6 +11,7 @@ function App() {
     const [recentVideoGames, setRecentVideoGames] = useState([]);
     const [filter, setFilter] = useState("");
     const [filteredGames, setFilteredGames] = useState([]);
+    const [chartDisplay, setChartDisplay] = useState(true);
 
     useEffect(() => {
         getAllGames();
@@ -46,6 +47,18 @@ function App() {
         setFilteredGames(tempFilter);
     }
 
+    function changeToConsoleChart() {
+        if (!chartDisplay) {
+            setChartDisplay(true);
+        }
+    }
+
+    function changeToGenreChart() {
+        if (chartDisplay) {
+            setChartDisplay(false);
+        }
+    }
+
     return (
         <div>
             <header>
@@ -53,10 +66,13 @@ function App() {
             </header>
             <main>
                 <div>
-                    <DisplayChartConsole array={recentVideoGames} />
-                </div>
-                <div>
-                    <DisplayChartGenre array={videoGames} />
+                    {chartDisplay ? (
+                        <DisplayChartConsole array={recentVideoGames} />
+                    ) : (
+                        <DisplayChartGenre array={videoGames} />
+                    )}
+                    <p onClick={changeToConsoleChart}>By Console</p>
+                    <p onClick={changeToGenreChart}>By Genre</p>
                 </div>
                 <div>
                     <h3>Search for Games to Learn More</h3>
