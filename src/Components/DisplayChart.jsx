@@ -3,12 +3,20 @@ import { Chart } from "react-google-charts";
 
 const DisplayChart = ({ array }) => {
     function generateDataForChart() {
+        let platforms = array.map((game) => game.platform);
+        let distinctPlatforms = [...new Set(platforms)];
+
+        let platformArrays = distinctPlatforms.map((item) => {
+            let allGamesForPlatform = array.filter(
+                (game) => game.platform === item
+            );
+            console.log(item, allGamesForPlatform);
+            return [item, 10, "silver"];
+        });
+
         const data = [
-            ["Platform", "Sales", { role: "style" }],
-            ["PS3", 8.94, "blue"],
-            ["Silver", 10.49, "blue"],
-            ["Gold", 19.3, "gold"],
-            ["Platinum", 21.45, "gold"],
+            ["Platform", "Global Sales", { role: "style" }],
+            ...platformArrays,
         ];
 
         return data;
