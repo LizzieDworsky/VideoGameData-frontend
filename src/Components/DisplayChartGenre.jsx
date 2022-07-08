@@ -20,7 +20,7 @@ const DisplayChartGenre = ({ array }) => {
         console.log(genreArrays);
 
         const data = [
-            ["Genre", "Global Sales", { role: "style" }],
+            ["Genre", "Global Sales in Millions", { role: "style" }],
             ...genreArrays,
         ];
         return data;

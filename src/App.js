@@ -69,7 +69,7 @@ function App() {
                     {chartDisplay ? (
                         <DisplayChartConsole array={recentVideoGames} />
                     ) : (
-                        <DisplayChartGenre array={videoGames} />
+                        <DisplayChartGenre array={recentVideoGames} />
                     )}
                     <p onClick={changeToConsoleChart}>By Console</p>
                     <p onClick={changeToGenreChart}>By Genre</p>

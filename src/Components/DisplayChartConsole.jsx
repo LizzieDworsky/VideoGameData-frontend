@@ -18,7 +18,7 @@ const DisplayChartConsole = ({ array }) => {
         });
 
         const data = [
-            ["Platform", "Global Sales", { role: "style" }],
+            ["Platform", "Global Sales in Millions", { role: "style" }],
             ...platformArrays,
         ];
         return data;
