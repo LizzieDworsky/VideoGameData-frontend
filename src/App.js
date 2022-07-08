@@ -6,6 +6,7 @@ import Mapper from "./Components/Mapper";
 
 function App() {
     const [videoGames, setVideoGames] = useState([]);
+    const [recentVideoGames, setRecentVideoGames] = useState([]);
     const [filter, setFilter] = useState("");
     const [filteredGames, setFilteredGames] = useState([]);
 
@@ -13,10 +14,24 @@ function App() {
         getAllGames();
     }, []);
 
+    useEffect(() => {
+        filterRecentGames();
+    }, [videoGames]);
+
     async function getAllGames() {
         let response = await axios.get("http://localhost:8080/all");
         console.log(response.data);
         setVideoGames(response.data);
+    }
+
+    function filterRecentGames() {
+        let tempFilter = videoGames.filter((item) => {
+            if (item.year > 2012) {
+                return true;
+            }
+        });
+        console.log(tempFilter);
+        setRecentVideoGames(tempFilter);
     }
 
     function filterGames() {
