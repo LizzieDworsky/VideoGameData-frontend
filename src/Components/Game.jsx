@@ -3,11 +3,11 @@ import React from "react";
 const Game = ({ item }) => {
     return (
         <div>
-            <li>{item.name}</li>
-            <li>{item.genre}</li>
-            <li>{item.platform}</li>
-            <li>{item.publisher}</li>
-            <li>{item.year}</li>
+            <h3>{item.name}</h3>
+            <p>{item.genre}</p>
+            <p>{item.platform}</p>
+            <p>{item.pubpsher}</p>
+            <p>{item.year}</p>
         </div>
     );
 };
