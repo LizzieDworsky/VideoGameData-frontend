@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import Mapper from "./Components/Mapper";
+import DisplayChart from "./Components/DisplayChart";
 
 function App() {
     const [videoGames, setVideoGames] = useState([]);
@@ -50,6 +51,9 @@ function App() {
                 <NavBar />
             </header>
             <main>
+                <div>
+                    <DisplayChart array={recentVideoGames} />
+                </div>
                 <div>
                     <h3>Search for Games to Learn More</h3>
                     <SearchBar setState={setFilter} />
