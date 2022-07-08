@@ -11,7 +11,6 @@ const DisplayChartConsole = ({ array }) => {
                 (game) => game.platform === item
             );
             let sum = 0;
-            let newSum;
             for (let i = 0; i < allGamesForPlatform.length; i++) {
                 sum += allGamesForPlatform[i].globalsales;
             }

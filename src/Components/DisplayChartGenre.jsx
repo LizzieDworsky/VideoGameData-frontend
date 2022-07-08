@@ -7,7 +7,14 @@ const DisplayChartGenre = ({ array }) => {
         let distinctGenres = [...new Set(genres)];
 
         let genreArrays = distinctGenres.map((item) => {
-            return [item, 10, "#3366CC"];
+            let allGamesInGenre = array.filter((game) => game.genre === item);
+
+            let sum = 0;
+            for (let i = 0; i < allGamesInGenre.length; i++) {
+                sum += allGamesInGenre[i].globalsales;
+            }
+
+            return [item, sum, "#3366CC"];
         });
 
         console.log(genreArrays);
