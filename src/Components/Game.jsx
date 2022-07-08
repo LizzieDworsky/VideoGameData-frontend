@@ -1,4 +1,5 @@
 import React from "react";
+import DisplayChartPerConsole from "./DisplayChartPerConsole";
 
 const Game = ({ item }) => {
     return (
@@ -8,6 +9,7 @@ const Game = ({ item }) => {
             <p>{item.platform}</p>
             <p>{item.pubpsher}</p>
             <p>{item.year}</p>
+            <DisplayChartPerConsole game={item} />
         </div>
     );
 };
