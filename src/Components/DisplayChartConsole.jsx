@@ -1,7 +1,7 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-const DisplayChart = ({ array }) => {
+const DisplayChartConsole = ({ array }) => {
     function generateDataForChart() {
         let platforms = array.map((game) => game.platform);
         let distinctPlatforms = [...new Set(platforms)];
@@ -38,4 +38,4 @@ const DisplayChart = ({ array }) => {
     );
 };
 
-export default DisplayChart;
+export default DisplayChartConsole;

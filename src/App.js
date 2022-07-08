@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import Mapper from "./Components/Mapper";
-import DisplayChart from "./Components/DisplayChart";
-import DisplayChartTwo from "./Components/DisplayChartTwo";
+import DisplayChartConsole from "./Components/DisplayChartConsole";
+import DisplayChartGenre from "./Components/DisplayChartGenre";
 
 function App() {
     const [videoGames, setVideoGames] = useState([]);
@@ -53,10 +53,10 @@ function App() {
             </header>
             <main>
                 <div>
-                    <DisplayChart array={recentVideoGames} />
+                    <DisplayChartConsole array={recentVideoGames} />
                 </div>
                 <div>
-                    <DisplayChartTwo array={recentVideoGames} />
+                    <DisplayChartGenre array={videoGames} />
                 </div>
                 <div>
                     <h3>Search for Games to Learn More</h3>
