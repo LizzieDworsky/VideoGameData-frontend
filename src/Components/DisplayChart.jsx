@@ -10,21 +10,24 @@ const DisplayChart = ({ array }) => {
             let allGamesForPlatform = array.filter(
                 (game) => game.platform === item
             );
-            console.log(item, allGamesForPlatform);
-            return [item, 10, "silver"];
+            let sum = 0;
+            let newSum;
+            for (let i = 0; i < allGamesForPlatform.length; i++) {
+                sum += allGamesForPlatform[i].globalsales;
+            }
+            console.log(newSum);
+            return [item, sum, "#3366CC"];
         });
 
         const data = [
             ["Platform", "Global Sales", { role: "style" }],
             ...platformArrays,
         ];
-
         return data;
     }
 
     return (
         <div>
-            <h1>Hello</h1>
             <Chart
                 chartType="ColumnChart"
                 width="100%"
