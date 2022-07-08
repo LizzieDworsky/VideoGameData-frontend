@@ -2,18 +2,19 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 const DisplayChartGenre = ({ array }) => {
-    let genres = array.map((item) => item.genre);
-    let distinctGenres = [...new Set(genres)];
-    console.log(distinctGenres);
-
     function generateDataForChart() {
-        const data = [
-            ["Element", "Density", { role: "style" }],
-            ["Copper", 8.94, "#b87333"], // RGB value
-            ["Silver", 10.49, "silver"], // English color name
-            ["Gold", 19.3, "gold"],
+        let genres = array.map((item) => item.genre);
+        let distinctGenres = [...new Set(genres)];
 
-            ["Platinum", 21.45, "color: #e5e4e2"], // CSS-style declaration
+        let genreArrays = distinctGenres.map((item) => {
+            return [item, 10, "#3366CC"];
+        });
+
+        console.log(genreArrays);
+
+        const data = [
+            ["Genre", "Global Sales", { role: "style" }],
+            ...genreArrays,
         ];
         return data;
     }

@@ -15,7 +15,6 @@ const DisplayChartConsole = ({ array }) => {
             for (let i = 0; i < allGamesForPlatform.length; i++) {
                 sum += allGamesForPlatform[i].globalsales;
             }
-            console.log(newSum);
             return [item, sum, "#3366CC"];
         });
 
