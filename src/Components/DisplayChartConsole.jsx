@@ -13,6 +13,19 @@ const DisplayChartConsole = ({ array }) => {
         let publishers = array.map((game) => game.publisher);
         let distinctPublishers = [...new Set(publishers)];
 
+        let publisherArray = distinctPublishers.map((item) => {
+            let allGamesForPublisher = array.filter(
+                (game) => game.publisher === item
+            );
+
+            // let seperate = distinctPublishers.map();
+
+            let total = 0;
+            for (let i = 0; i < allGamesForPublisher.length; i++) {
+                total += allGamesForPublisher[i].globalsales;
+            }
+        });
+
         let platformArrays = distinctPlatforms.map((item) => {
             let allGamesForPlatform = array.filter(
                 (game) => game.platform === item
@@ -21,16 +34,8 @@ const DisplayChartConsole = ({ array }) => {
             let gamePublishers = allGamesForPlatform.map(
                 (game) => game.publisher
             );
-            let distinctGamePublishers = [...new Set(publishers)];
-            let publisherArray = distinctGamePublishers.map((item) => {
-                let allGamesForPlatformPublisher = allGamesForPlatform.filter(
-                    (game) => game.publisher === item
-                );
-                let total = 0;
-                for (let i = 0; i < allGamesForPlatformPublisher.length; i++) {
-                    total += allGamesForPlatformPublisher[i].globalsales;
-                }
-            });
+            let distinctGamePublishers = [...new Set(gamePublishers)];
+
             // do the mapping for all games for platform and publisher,
             // then do a for loop to add those together
 
