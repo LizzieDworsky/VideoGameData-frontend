@@ -68,8 +68,20 @@ function App() {
                     ) : (
                         <DisplayChartGenre array={recentVideoGames} />
                     )}
-                    <p onClick={changeToConsoleChart}>By Console</p>
-                    <p onClick={changeToGenreChart}>By Genre</p>
+                    <div className="change-main-chart-div">
+                        <p
+                            className="change-chart-paragraphs"
+                            onClick={changeToConsoleChart}
+                        >
+                            By Console
+                        </p>
+                        <p
+                            className="change-chart-paragraphs"
+                            onClick={changeToGenreChart}
+                        >
+                            By Genre
+                        </p>
+                    </div>
                 </div>
                 <div>
                     <h3>Search for Games to Learn More</h3>

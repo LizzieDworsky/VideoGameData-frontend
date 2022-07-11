@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts";
 
 const DisplayChartGenre = ({ array }) => {
     const options = {
-        backgroundColor: "#e4e4e4",
+        backgroundColor: "#c4e8e6",
     };
     function generateDataForChart() {
         let genres = array.map((item) => item.genre);

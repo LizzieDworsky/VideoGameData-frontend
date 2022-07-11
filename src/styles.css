@@ -1,3 +1,23 @@
 body {
-    background-color: #e4e4e4;
+    background-color: #c4e8e6;
+}
+
+h1 {
+    color: #205b59;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    font-size: 300%;
+}
+
+.change-chart-paragraphs {
+    color: #205b59;
+    display: inline;
+    padding: 0px 15px;
+    font-size: 70%;
+}
+
+.change-main-chart-div {
+    position: absolute;
+    width: 40%;
+    left: 45%;
 }

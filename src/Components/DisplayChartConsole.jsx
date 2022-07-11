@@ -3,7 +3,7 @@ import { Chart } from "react-google-charts";
 
 const DisplayChartConsole = ({ array }) => {
     const options = {
-        backgroundColor: "#e4e4e4",
+        backgroundColor: "#c4e8e6",
         borderRadius: 20,
     };
     function generateDataForChart() {

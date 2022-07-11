@@ -7,7 +7,7 @@ const DisplayChartPerConsole = ({ game, array }) => {
     const options = {
         title: "Amount Sold Per Console",
         is3D: true,
-        backgroundColor: "#e4e4e4",
+        backgroundColor: "#c4e8e6",
     };
 
     function generateDataForChart() {
