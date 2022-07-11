@@ -2,11 +2,6 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 const DisplayChartConsole = ({ array }) => {
-    const options = {
-        title: "Global Sales in Millions",
-        isStacked: true,
-    };
-
     function generateDataForChart() {
         let platforms = array.map((game) => game.platform);
         let distinctPlatforms = [...new Set(platforms)];
@@ -15,11 +10,6 @@ const DisplayChartConsole = ({ array }) => {
             let allGamesForPlatform = array.filter(
                 (game) => game.platform === item
             );
-
-            let publishers = allGamesForPlatform.map((game) => game.publisher);
-            let distinctPublishers = [...new Set(publishers)];
-            console.log(item, distinctPublishers);
-
             let sum = 0;
             for (let i = 0; i < allGamesForPlatform.length; i++) {
                 sum += allGamesForPlatform[i].globalsales;
@@ -41,7 +31,6 @@ const DisplayChartConsole = ({ array }) => {
                 width="100%"
                 height="400px"
                 data={generateDataForChart()}
-                options={options}
             />
         </div>
     );
