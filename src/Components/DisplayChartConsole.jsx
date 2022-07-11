@@ -2,6 +2,10 @@ import React from "react";
 import { Chart } from "react-google-charts";
 
 const DisplayChartConsole = ({ array }) => {
+    const options = {
+        backgroundColor: "#e4e4e4",
+        borderRadius: 20,
+    };
     function generateDataForChart() {
         let platforms = array.map((game) => game.platform);
         let distinctPlatforms = [...new Set(platforms)];
@@ -31,6 +35,7 @@ const DisplayChartConsole = ({ array }) => {
                 width="100%"
                 height="400px"
                 data={generateDataForChart()}
+                options={options}
             />
         </div>
     );
