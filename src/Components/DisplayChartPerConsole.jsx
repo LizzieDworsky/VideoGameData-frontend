@@ -6,7 +6,7 @@ const DisplayChartPerConsole = ({ game, array }) => {
     // now I need to do a compar or the game and find any matching titles, then use that data to create the chart
 
     const options = {
-        title: "Number Sold Per Console",
+        title: "Amount Sold Per Console",
         is3D: true,
     };
 
@@ -19,13 +19,15 @@ const DisplayChartPerConsole = ({ game, array }) => {
 
         console.log("Same Games", sameGame);
 
+        let sameGameArrays = sameGame.map((item) => {
+            return [item.platform, 10];
+        });
+
+        console.log(sameGameArrays);
+
         const data = [
-            ["Task", "Hours per Day"],
-            ["Work", 11],
-            ["Eat", 2],
-            ["Commute", 2],
-            ["Watch TV", 2],
-            ["Sleep", 7],
+            ["Console", "Amount Sold In Millions"],
+            ...sameGameArrays,
         ];
 
         return data;
