@@ -3,7 +3,6 @@ import { Chart } from "react-google-charts";
 
 const DisplayChartPerConsole = ({ game, array }) => {
     const [displayChartBool, setDisplayChartBool] = useState(false);
-    // now I need to do a compar or the game and find any matching titles, then use that data to create the chart
 
     const options = {
         title: "Amount Sold Per Console",
@@ -17,13 +16,9 @@ const DisplayChartPerConsole = ({ game, array }) => {
             }
         });
 
-        console.log("Same Games", sameGame);
-
         let sameGameArrays = sameGame.map((item) => {
-            return [item.platform, 10];
+            return [item.platform, item.globalsales];
         });
-
-        console.log(sameGameArrays);
 
         const data = [
             ["Console", "Amount Sold In Millions"],
