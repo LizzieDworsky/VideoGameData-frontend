@@ -23,7 +23,6 @@ function App() {
 
     async function getAllGames() {
         let response = await axios.get("http://localhost:8080/all");
-        console.log(response.data);
         setVideoGames(response.data);
     }
 
@@ -33,7 +32,6 @@ function App() {
                 return true;
             }
         });
-        console.log(tempFilter);
         setRecentVideoGames(tempFilter);
     }
 
@@ -43,7 +41,6 @@ function App() {
                 return true;
             }
         });
-        console.log(tempFilter);
         setFilteredGames(tempFilter);
     }
 

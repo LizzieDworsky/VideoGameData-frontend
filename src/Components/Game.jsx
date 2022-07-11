@@ -1,7 +1,7 @@
 import React from "react";
 import DisplayChartPerConsole from "./DisplayChartPerConsole";
 
-const Game = ({ item }) => {
+const Game = ({ item, array }) => {
     return (
         <div>
             <h3>{item.name}</h3>
@@ -9,7 +9,7 @@ const Game = ({ item }) => {
             <p>{item.platform}</p>
             <p>{item.pubpsher}</p>
             <p>{item.year}</p>
-            <DisplayChartPerConsole game={item} />
+            <DisplayChartPerConsole game={item} array={array} />
         </div>
     );
 };

@@ -1,22 +1,35 @@
 import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 
-const DisplayChartPerConsole = ({ game }) => {
+const DisplayChartPerConsole = ({ game, array }) => {
     const [displayChartBool, setDisplayChartBool] = useState(false);
-
-    const data = [
-        ["Task", "Hours per Day"],
-        ["Work", 11],
-        ["Eat", 2],
-        ["Commute", 2],
-        ["Watch TV", 2],
-        ["Sleep", 7],
-    ];
+    // now I need to do a compar or the game and find any matching titles, then use that data to create the chart
 
     const options = {
-        title: "My Daily Activities",
+        title: "Number Sold Per Console",
         is3D: true,
     };
+
+    function generateDataForChart() {
+        let sameGame = array.filter((item) => {
+            if (item.name === game.name) {
+                return true;
+            }
+        });
+
+        console.log("Same Games", sameGame);
+
+        const data = [
+            ["Task", "Hours per Day"],
+            ["Work", 11],
+            ["Eat", 2],
+            ["Commute", 2],
+            ["Watch TV", 2],
+            ["Sleep", 7],
+        ];
+
+        return data;
+    }
 
     function displayPerConsoleChart() {
         setDisplayChartBool(!displayChartBool);
@@ -28,7 +41,7 @@ const DisplayChartPerConsole = ({ game }) => {
             {displayChartBool ? (
                 <Chart
                     chartType="PieChart"
-                    data={data}
+                    data={generateDataForChart()}
                     options={options}
                     width={"100%"}
                     height={"400px"}

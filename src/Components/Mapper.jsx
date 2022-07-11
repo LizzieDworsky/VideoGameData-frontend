@@ -6,7 +6,7 @@ const Mapper = ({ array }) => {
         <ul>
             {array.map((item) => (
                 <li key={item.id}>
-                    <Game item={item} />
+                    <Game item={item} array={array} />
                     <hr />
                 </li>
             ))}
