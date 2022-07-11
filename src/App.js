@@ -84,9 +84,21 @@ function App() {
                     </div>
                 </div>
                 <div>
-                    <h3>Search for Games to Learn More</h3>
-                    <SearchBar setState={setFilter} />
-                    <button onClick={filterGames}>Search</button>
+                    <h3 className="search-bar-heading">
+                        Search for Games to Learn More
+                    </h3>
+                    <div className="search-section-div">
+                        <SearchBar
+                            className="search-section"
+                            setState={setFilter}
+                        />
+                        <button
+                            className="search-section search-section-button"
+                            onClick={filterGames}
+                        >
+                            Search
+                        </button>
+                    </div>
                     {filteredGames[0] ? <Mapper array={filteredGames} /> : null}
                 </div>
             </main>
