@@ -13,6 +13,18 @@ form {
     width: 50%;
 }
 
+hr {
+    border-style: dotted;
+    border-color: #205b59;
+    border-width: 1px 0px 0px 0px;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 .change-chart-paragraphs {
     color: #205b59;
     display: inline;
@@ -38,7 +50,7 @@ form {
 }
 
 .search-section-div {
-    margin-bottom: 10em;
+    margin-bottom: 8em;
 }
 
 .search-section {
@@ -68,4 +80,9 @@ form {
     border: 3px solid #205b59;
     background-color: #e6f4f1;
     border-radius: 15px;
+}
+
+.mapper {
+    border: 1px solid #205b59;
+    border-radius: 20px;
 }

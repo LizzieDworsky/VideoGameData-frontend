@@ -99,7 +99,11 @@ function App() {
                             Search
                         </button>
                     </div>
-                    {filteredGames[0] ? <Mapper array={filteredGames} /> : null}
+                    <div className="mapper">
+                        {filteredGames[0] ? (
+                            <Mapper array={filteredGames} />
+                        ) : null}
+                    </div>
                 </div>
             </main>
             <footer></footer>
