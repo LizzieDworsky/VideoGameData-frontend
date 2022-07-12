@@ -40,15 +40,19 @@ const DisplayChartConsoleUpdated = ({ array }) => {
                     }
                     return sum;
                 } else {
-                    let sum = null;
+                    let sum = 0;
                     return sum;
                 }
             });
-            return [platform, ...publisherArray];
+            let total = 0;
+            for (let i = 0; i < allGamesForPlatform.length; i++) {
+                total += allGamesForPlatform[i].globalsales;
+            }
+            return [platform, ...publisherArray, total];
         });
 
         const data = [
-            ["Platform", ...allDistinctPublishers],
+            ["Platform", ...allDistinctPublishers, { role: "annotation" }],
             ...platformArrays,
         ];
         return data;

@@ -17,13 +17,16 @@ const DisplayChartGenre = ({ array }) => {
                 sum += allGamesInGenre[i].globalsales;
             }
 
-            return [item, sum, "#3366CC"];
+            return [item, sum, "#3366CC", sum];
         });
 
-        console.log(genreArrays);
-
         const data = [
-            ["Genre", "Global Sales in Millions", { role: "style" }],
+            [
+                "Genre",
+                "Global Sales in Millions",
+                { role: "style" },
+                { role: "annotation" },
+            ],
             ...genreArrays,
         ];
         return data;
