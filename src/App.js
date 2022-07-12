@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import Mapper from "./Components/Mapper";
-import DisplayChartConsole from "./Components/DisplayChartConsole";
-import DisplayChartConsoleAddOns from "./Components/DisplayChartConsole-testing";
+import DisplayChartConsoleUpdated from "./Components/DisplayChartConsoleUpdated";
 import DisplayChartGenre from "./Components/DisplayChartGenre";
 
 function App() {
@@ -65,7 +64,7 @@ function App() {
             <main>
                 <div>
                     {chartDisplay ? (
-                        <DisplayChartConsoleAddOns array={recentVideoGames} />
+                        <DisplayChartConsoleUpdated array={recentVideoGames} />
                     ) : (
                         <DisplayChartGenre array={recentVideoGames} />
                     )}

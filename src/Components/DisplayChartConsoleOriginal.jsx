@@ -1,7 +1,7 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-const DisplayChartConsole = ({ array }) => {
+const DisplayChartConsoleOriginal = ({ array }) => {
     const options = {
         backgroundColor: "#c4e8e6",
         borderRadius: 20,
@@ -41,4 +41,4 @@ const DisplayChartConsole = ({ array }) => {
     );
 };
 
-export default DisplayChartConsole;
+export default DisplayChartConsoleOriginal;

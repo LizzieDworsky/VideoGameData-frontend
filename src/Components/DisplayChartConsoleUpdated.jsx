@@ -1,10 +1,11 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-const DisplayChartConsoleAddOns = ({ array }) => {
+const DisplayChartConsoleUpdated = ({ array }) => {
     const options = {
         title: "Global Sales in Millions",
         isStacked: true,
+        backgroundColor: "#c4e8e6",
     };
 
     function generateDataForChart() {
@@ -39,11 +40,10 @@ const DisplayChartConsoleAddOns = ({ array }) => {
                     }
                     return sum;
                 } else {
-                    let sum = 0;
+                    let sum = null;
                     return sum;
                 }
             });
-            console.log(platform, publisherArray);
             return [platform, ...publisherArray];
         });
 
@@ -67,4 +67,4 @@ const DisplayChartConsoleAddOns = ({ array }) => {
     );
 };
 
-export default DisplayChartConsoleAddOns;
+export default DisplayChartConsoleUpdated;
