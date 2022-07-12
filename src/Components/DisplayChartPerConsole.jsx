@@ -35,7 +35,12 @@ const DisplayChartPerConsole = ({ game, array }) => {
 
     return (
         <div>
-            <p onClick={displayPerConsoleChart}>Click to Learn More</p>
+            <p
+                className="mapped-item-learn-more"
+                onClick={displayPerConsoleChart}
+            >
+                Click to Learn More
+            </p>
             {displayChartBool ? (
                 <Chart
                     chartType="PieChart"

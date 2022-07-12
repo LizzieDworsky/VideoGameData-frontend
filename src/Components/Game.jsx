@@ -4,11 +4,10 @@ import DisplayChartPerConsole from "./DisplayChartPerConsole";
 const Game = ({ item, array }) => {
     return (
         <div>
-            <h3>{item.name}</h3>
-            <p>{item.genre}</p>
-            <p>{item.platform}</p>
-            <p>{item.pubpsher}</p>
-            <p>{item.year}</p>
+            <h3 className="mapped-item-heading">{item.name}</h3>
+            <p className="mapped-item">Genre: {item.genre}</p>
+            <p className="mapped-item">Publisher: {item.publisher}</p>
+            <p className="mapped-item">Release Year: {item.year}</p>
             <DisplayChartPerConsole game={item} array={array} />
         </div>
     );
