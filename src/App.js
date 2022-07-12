@@ -4,6 +4,7 @@ import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import Mapper from "./Components/Mapper";
 import DisplayChartConsole from "./Components/DisplayChartConsole";
+import DisplayChartConsoleAddOns from "./Components/DisplayChartConsole-testing";
 import DisplayChartGenre from "./Components/DisplayChartGenre";
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
             <main>
                 <div>
                     {chartDisplay ? (
-                        <DisplayChartConsole array={recentVideoGames} />
+                        <DisplayChartConsoleAddOns array={recentVideoGames} />
                     ) : (
                         <DisplayChartGenre array={recentVideoGames} />
                     )}

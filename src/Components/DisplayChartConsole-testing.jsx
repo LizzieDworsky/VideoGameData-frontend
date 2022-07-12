@@ -1,7 +1,7 @@
 import React from "react";
 import { Chart } from "react-google-charts";
 
-const DisplayChartConsole = ({ array }) => {
+const DisplayChartConsoleAddOns = ({ array }) => {
     const options = {
         title: "Global Sales in Millions",
         isStacked: true,
@@ -10,123 +10,47 @@ const DisplayChartConsole = ({ array }) => {
     function generateDataForChart() {
         let platforms = array.map((game) => game.platform);
         let distinctPlatforms = [...new Set(platforms)];
-        let publishers = array.map((game) => game.publisher);
-        let distinctPublishers = [...new Set(publishers)];
+        let allPublishers = array.map((game) => game.publisher);
+        let allDistinctPublishers = [...new Set(allPublishers)];
 
-        let platformArrays = distinctPlatforms.map((item) => {
+        let platformArrays = distinctPlatforms.map((platform) => {
             let allGamesForPlatform = array.filter(
-                (game) => game.platform === item
+                (game) => game.platform === platform
             );
-            let gamePublishers = allGamesForPlatform.map(
+            let publishersOnEachPlatform = allGamesForPlatform.map(
                 (game) => game.publisher
             );
-            let distinctGamePublishers = [...new Set(gamePublishers)];
-            for (let i = 0; i < distinctGamePublishers; i++) {
-                if (distinctPublishers.includes(distinctGamePublishers[i])) {
-                    null;
+            let distinctPublishersOnEachPlatform = [
+                ...new Set(publishersOnEachPlatform),
+            ];
+            let publisherArray = allDistinctPublishers.map((publisher) => {
+                if (distinctPublishersOnEachPlatform.includes(publisher)) {
+                    let allGamesForPublisherAndPlatform =
+                        allGamesForPlatform.filter(
+                            (game) => game.publisher === publisher
+                        );
+                    let sum = 0;
+                    for (
+                        let i = 0;
+                        i < allGamesForPublisherAndPlatform.length;
+                        i++
+                    ) {
+                        sum += allGamesForPublisherAndPlatform[i].globalsales;
+                    }
+                    return sum;
                 } else {
-                    null;
-                }
-            }
-            let publisherArray = distinctPublishers.map((item) => {
-                let allGamesForPublisher = array.filter(
-                    (game) => game.publisher === item
-                );
-
-                // let seperate = distinctPublishers.map();
-
-                let total = 0;
-                for (let i = 0; i < allGamesForPublisher.length; i++) {
-                    total += allGamesForPublisher[i].globalsales;
+                    let sum = 0;
+                    return sum;
                 }
             });
-
-            // let distinctGamePublishers = [...new Set(game)];
-
-            // do the mapping for all games for platform and publisher,
-            // then do a for loop to add those together
-
-            // let sum = 0;
-            // for (let i = 0; i < allGamesForPlatform.length; i++) {
-            //     sum += allGamesForPlatform[i].globalsales;
-            // }
-            return [
-                item,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-            ];
+            console.log(platform, publisherArray);
+            return [platform, ...publisherArray];
         });
 
-        const data = [["Platform", ...distinctPublishers], ...platformArrays];
+        const data = [
+            ["Platform", ...allDistinctPublishers],
+            ...platformArrays,
+        ];
         return data;
     }
 
@@ -143,4 +67,4 @@ const DisplayChartConsole = ({ array }) => {
     );
 };
 
-export default DisplayChartConsole;
+export default DisplayChartConsoleAddOns;
