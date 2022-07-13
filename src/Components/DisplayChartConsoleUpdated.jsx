@@ -32,6 +32,7 @@ const DisplayChartConsoleUpdated = ({ array }) => {
                         );
                     let sum = 0;
                     for (
+                        //.reduce refactor
                         let i = 0;
                         i < allGamesForPublisherAndPlatform.length;
                         i++
@@ -40,12 +41,13 @@ const DisplayChartConsoleUpdated = ({ array }) => {
                     }
                     return sum;
                 } else {
-                    let sum = 0;
+                    let sum = 0; //having null value, bugged annotations
                     return sum;
                 }
             });
             let total = 0;
             for (let i = 0; i < allGamesForPlatform.length; i++) {
+                //.reduce refactor
                 total += allGamesForPlatform[i].globalsales;
             }
             return [platform, ...publisherArray, total];

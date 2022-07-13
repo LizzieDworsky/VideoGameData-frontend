@@ -37,7 +37,12 @@ function App() {
 
     function filterGames() {
         let tempFilter = videoGames.filter((item) => {
-            if (item.name.includes(filter)) {
+            if (
+                item.name.includes(filter) ||
+                item.publisher.includes(filter) ||
+                item.genre.includes(filter) ||
+                item.platform.includes(filter)
+            ) {
                 return true;
             }
         });
